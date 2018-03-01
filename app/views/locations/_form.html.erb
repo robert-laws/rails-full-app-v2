@@ -8,8 +8,13 @@
   <%= f.label :size %>
   <%= f.number_field :size %><br>
 
-  <%= f.label 'Available Activities' %>
-  <%= f.collection_check_boxes :activity_ids, @activities, :id, :name %><br>
+  <%= f.label 'Available Activities' %><br>
+
+  <%= f.collection_check_boxes :activity_ids, @activities, :id, :name do |item| %>
+    <div>
+      <%= item.check_box %> <%= item.object.name %>
+    </div>
+  <% end %>
 
   <%= f.label 'Create a New Activity' %><br>
   
