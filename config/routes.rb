@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static#home'
 
   # Locations
-  resources :locations, only: [:index, :show, :new, :create] do
+  resources :locations, only: [:index, :show, :new, :create, :edit, :update] do
     resources :activities, only: [:index, :show]
   end
 

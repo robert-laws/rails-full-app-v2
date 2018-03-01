@@ -14,6 +14,8 @@
   <%= f.label 'Create a New Activity' %><br>
   
   <%= f.fields_for :activities, @activity do |activity_fields| %>
+    <%= activity_fields.hidden_field :id %>
+
     <%= activity_fields.label :name %>
     <%= activity_fields.text_field :name %><br>
 

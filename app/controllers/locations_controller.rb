@@ -22,9 +22,23 @@ class LocationsController < ApplicationController
     end
   end
 
+  def edit
+    @location = Location.find(params[:id])
+    @activities = Activity.all
+  end
+
+  def update
+    @location = Location.find(params[:id])
+    if @location.update(location_params)
+      redirect_to location_path(@location), notice: "Your location was updated successfully"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def location_params
-    params.require(:location).permit(:city, :size, :open_year, activity_ids: [], activities_attributes: [:name, :description, :ideal_type, :ideal_size, :energy_usage])
+    params.require(:location).permit(:city, :size, :open_year, activity_ids: [], activities_attributes: [:id, :name, :description, :ideal_type, :ideal_size, :energy_usage])
   end
 end
