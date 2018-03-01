@@ -15,10 +15,10 @@ Build process for the testing website
 
 - [x] Authenitication (create user with first_name, last_name, usernmae, email, password)
 - [ ] User Profile (add address and one-or-more dogs to user)
-- [ ] Location
-- [ ] Activity
+- [x] Location
+- [x] Activity
 - [ ] Nested form -> location has_many activities
-- [ ] Nested resource -> locations/:location_id/activities/:id
+- [x] Nested resource -> locations/:location_id/activities/:id
 - [ ] Class methods -> locations, activities, etc.
 - [ ] Reservations -> nested form many-to-many reservations to activities
 - [ ] Validations, etc.
