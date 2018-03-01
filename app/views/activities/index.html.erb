@@ -3,7 +3,11 @@
 <ul>
   <% @activities.each do |activity| %>
     <li>
-      <%= link_to activity.name, activity_path(activity) %>
+      <% if @location %>
+        <%= link_to activity.name, location_activity_path(@location, activity) %>
+      <% else %>
+        <%= link_to activity.name, activity_path(activity) %>
+      <% end %>
     </li>
   <% end %>
 </ul>

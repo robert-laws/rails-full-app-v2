@@ -17,7 +17,15 @@
 <ul>
   <% @location.activities.each do |activity| %>
     <li>
-      <%= activity.name %>
+      <%= link_to activity.name, location_activity_path(@location, activity) %>
     </li>
   <% end %>
 </ul>
+
+<hr>
+
+<strong>View all location activities</strong>
+
+<p>
+  <%= link_to "Activities for #{@location.city}", location_activities_path(@location) %>
+</p>
