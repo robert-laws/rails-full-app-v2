@@ -1,0 +1,12 @@
+<%= form_for @location do |f| %>
+  <%= f.label :city %>
+  <%= f.text_field :city %><br>
+
+  <%= f.label :open_year %>
+  <%= f.number_field :open_year %><br>
+
+  <%= f.label :size %>
+  <%= f.number_field :size %><br>
+
+  <%= f.submit %>
+<% end %>
