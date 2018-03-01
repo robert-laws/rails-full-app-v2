@@ -9,6 +9,8 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+    @activities = Activity.all
+    @activity = @location.activities.build
   end
 
   def create
@@ -23,6 +25,6 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:city, :size, :open_year)
+    params.require(:location).permit(:city, :size, :open_year, activity_ids: [], activities_attributes: [:name, :description, :ideal_type, :ideal_size, :energy_usage])
   end
 end

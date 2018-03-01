@@ -8,5 +8,27 @@
   <%= f.label :size %>
   <%= f.number_field :size %><br>
 
+  <%= f.label 'Available Activities' %>
+  <%= f.collection_check_boxes :activity_ids, @activities, :id, :name %><br>
+
+  <%= f.label 'Create a New Activity' %><br>
+  
+  <%= f.fields_for :activities, @activity do |activity_fields| %>
+    <%= activity_fields.label :name %>
+    <%= activity_fields.text_field :name %><br>
+
+    <%= activity_fields.label :description %>
+    <%= activity_fields.text_area :description%><br>
+
+    <%= activity_fields.label :ideal_type %>
+    <%= activity_fields.text_field :ideal_type %><br>
+
+    <%= activity_fields.label :ideal_size %>
+    <%= activity_fields.text_field :ideal_size %><br>
+
+    <%= activity_fields.label :energy_usage %>
+    <%= activity_fields.text_field :energy_usage %><br>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
