@@ -1,24 +1,34 @@
-# README
+# Components to Develop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Build process for the testing website
 
-Things you may want to cover:
+## Apps = Branches
 
-* Ruby version
+- [ ] user-accounts [authentication, omniauth, validations, error messages]
+- [ ] profile-associations [associations, validations, error messages]
+- [ ] location-activity-features [associations, nested form, validations, error messages, scope methods]
+- [ ] reservations [associations, nested form with join table, validations, error messages]
+- [ ] user-interface-and-integration [asset-pipeline, etc.]
 
-* System dependencies
+## Component Overview
 
-* Configuration
+- [ ] Authenitication (create user with first_name, last_name, usernmae, email, password)
+- [ ] User Profile (add address and one-or-more dogs to user)
+- [ ] Location
+- [ ] Activity
+- [ ] Nested form -> location has_many activities
+- [ ] Nested resource -> locations/:location_id/activities/:id
+- [ ] Class methods -> locations, activities, etc.
+- [ ] Reservations -> nested form many-to-many reservations to activities
+- [ ] Validations, etc.
 
-* Database creation
+## Features
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [ ] User authentication system
+- [ ] Omniauth integration
+- [ ] Associations, ex. has_many, belongs_to, has_many :through
+- [ ] Validations
+- [ ] Error messages
+- [ ] Class level scope methods
+- [ ] Nested form with custom attribute writer
+- [ ] Nested form with custom attribute writer to join table
