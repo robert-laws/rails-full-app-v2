@@ -4,7 +4,8 @@ Build process for the testing website
 
 ## Apps = Branches
 
-- [ ] user-accounts [authentication, omniauth, validations, error messages]
+- [x] user-accounts [authentication, validations, error messages]
+- [ ] user-accounts [omniauth]
 - [ ] profile-associations [associations, validations, error messages]
 - [ ] location-activity-features [associations, nested form, validations, error messages, scope methods]
 - [ ] reservations [associations, nested form with join table, validations, error messages]
@@ -12,7 +13,7 @@ Build process for the testing website
 
 ## Component Overview
 
-- [ ] Authenitication (create user with first_name, last_name, usernmae, email, password)
+- [x] Authenitication (create user with first_name, last_name, usernmae, email, password)
 - [ ] User Profile (add address and one-or-more dogs to user)
 - [ ] Location
 - [ ] Activity
@@ -24,7 +25,7 @@ Build process for the testing website
 
 ## Features
 
-- [ ] User authentication system
+- [x] User authentication system
 - [ ] Omniauth integration
 - [ ] Associations, ex. has_many, belongs_to, has_many :through
 - [ ] Validations
