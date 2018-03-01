@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # Sessions / New User
   get '/signup', to: 'users#new', as: 'new_user'
   get '/signin', to: 'sessions#new'
+  get '/signout', to: 'sessions#destroy'
 
   # Users
   get '/users', to: 'users#index'
