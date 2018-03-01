@@ -11,3 +11,13 @@
 <p>
   <%= @location.size %>
 </p>
+
+<strong>Location - Activities</strong>
+
+<ul>
+  <% @location.activities.each do |activity| %>
+    <li>
+      <%= activity.name %>
+    </li>
+  <% end %>
+</ul>

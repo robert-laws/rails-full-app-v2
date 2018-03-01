@@ -19,3 +19,13 @@
 <p>
   <%= @activity.energy_usage %>
 </p>
+
+<strong>Activity - Locations</strong>
+
+<ul>
+  <% @activity.locations.each do |location| %>
+    <li>
+      <%= location.city %>
+    </li>
+  <% end %>
+</ul>
