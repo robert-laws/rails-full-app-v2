@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  
-
-  get 'activities/index'
-
-  get 'activities/show'
-
-  get 'locations/index'
-
-  get 'locations/show'
-
+  # Root
   root 'static#home'
+
+  # Locations
+  resources :locations, only: [:index, :show]
+
+  # Activities
+  resources :activities, only: [:index, :show]
 end
