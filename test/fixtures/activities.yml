@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  ideal_type: MyString
+  ideal_size: MyString
+  energy_usage: MyString
+
+two:
+  name: MyString
+  description: MyText
+  ideal_type: MyString
+  ideal_size: MyString
+  energy_usage: MyString
