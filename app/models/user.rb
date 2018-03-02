@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_by_omniauth(auth_hash)
     oauth_email = auth_hash["info"]["email"]
-    self.where(email: oauth_email).first_or_create do |user|
+    where(email: oauth_email).first_or_create do |user|
       user.username = oauth_email.split("@")[0]
       user.password = SecureRandom.hex
     end
