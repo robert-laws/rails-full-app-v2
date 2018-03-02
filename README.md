@@ -5,7 +5,7 @@ Build process for the testing website
 ## Apps = Branches
 
 - [x] user-accounts [authentication, validations, error messages]
-- [ ] user-accounts [omniauth]
+- [x] user-accounts [omniauth]
 - [ ] profile-associations [associations, validations, error messages] - *depends on user-accounts*
 - [ ] location-activity-features [associations, nested form, validations, error messages, scope methods]
 - [ ] reservations [associations, nested form with join table, validations, error messages] - *depends on profile-associations*
@@ -26,7 +26,7 @@ Build process for the testing website
 ## Features
 
 - [x] User authentication system
-- [ ] Omniauth integration
+- [x] Omniauth integration
 - [ ] Associations, ex. has_many, belongs_to, has_many :through
 - [ ] Validations
 - [ ] Error messages
