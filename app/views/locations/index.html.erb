@@ -1,9 +1,19 @@
+<% title "Locations" %>
+
 <h1>All Locations</h1>
 
 <ul>
   <% @locations.each do |location| %>
     <li>
-      <%= link_to location.city, location_path(location) %>
+      <%= link_to location.city, location_path(location) %> - <%= location.open_year %>
     </li>
   <% end %>
 </ul>
+
+<hr>
+
+<%= form_tag("/locations", method: "get") do %>
+  <%= select_tag "sort", options_for_select(["ASC", "DESC"]), include_blank: true %>
+  <%= select_tag "open_year", options_for_select(["before 2000", "between 2000 and 2010", "after 2010"]), include_blank: true %>
+  <%= submit_tag "Filter" %>
+<% end %>

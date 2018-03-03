@@ -1,6 +1,28 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all
+    if params[:open_year].present? && params[:sort].present?
+      if params[:open_year] == "before 2000"
+        if params[:sort] == "ASC"
+          @locations = Location.before_2000.sort_asc
+        else
+          @locations = Location.before_2000.sort_desc
+        end
+      elsif params[:open_year] == "between 2000 and 2010"
+        if params[:sort] == "ASC"
+          @locations = Location.between_2000_and_2010.sort_asc
+        else
+          @locations = Location.between_2000_and_2010.sort_desc
+        end
+      elsif params[:open_year] == "after 2010"
+        if params[:sort] == "ASC"
+          @locations = Location.after_2010.sort_asc
+        else
+          @locations = Location.after_2010.sort_desc
+        end
+      end
+    else
+      @locations = Location.all
+    end
   end
 
   def show

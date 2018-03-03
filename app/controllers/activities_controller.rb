@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    if params[:location_id] 
+    if params[:location_id]
       # case of nested url path
       @location = Location.find_by(id: params[:location_id])
       if @location.nil?
@@ -10,7 +10,10 @@ class ActivitiesController < ApplicationController
       end
     else 
       # case of no nested url path
-      @activities = Activity.all
+      @activities = Activity.where(nil)
+      @activities = @activities.ideal_size(params[:size]) if params[:size].present?
+      @activities = @activities.ideal_type(params[:type]) if params[:type].present?
+      @activities = @activities.energy_usage(params[:energy]) if params[:energy].present?
     end
   end
 
