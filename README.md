@@ -17,7 +17,7 @@ Build process for the testing website
 - [ ] User Profile (add address and one-or-more dogs to user)
 - [x] Location
 - [x] Activity
-- [ ] Nested form -> location has_many activities
+- [x] Nested form -> location has_many activities
 - [x] Nested resource -> locations/:location_id/activities/:id
 - [ ] Class methods -> locations, activities, etc.
 - [ ] Reservations -> nested form many-to-many reservations to activities
@@ -30,6 +30,6 @@ Build process for the testing website
 - [ ] Associations, ex. has_many, belongs_to, has_many :through
 - [ ] Validations
 - [ ] Error messages
-- [ ] Class level scope methods
+- [x] Class level scope methods
 - [ ] Nested form with custom attribute writer
 - [ ] Nested form with custom attribute writer to join table
