@@ -25,6 +25,13 @@ class LocationsController < ApplicationController
     end
   end
 
+  def search
+    @locations = Location.all
+    @locations = @locations.by_open_year(params[:year]) if params[:year].present?
+    @locations = @locations.by_size(params[:size]) if params[:size].present?
+    @locations = @locations.by_activities_count(params[:activities]) if params[:activities].present?
+  end
+
   def show
     @location = Location.find(params[:id])
   end
