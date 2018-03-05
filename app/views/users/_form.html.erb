@@ -16,6 +16,8 @@
 
   <%= f.fields_for(:addresses) do |address_fields| %>
     <h5>User Address</h5>
+
+    <%= address_fields.hidden_field :id %>
     
     <%= address_fields.label :street_1 %>
     <%= address_fields.text_field :street_1 %><br>
@@ -35,6 +37,9 @@
 
   <%= f.fields_for(:dogs) do |dog_fields| %>
     <h5>Dog # <%= dog_fields.index + 1 %></h5> 
+
+    <%= dog_fields.hidden_field :id %>
+
     <%= dog_fields.label :name %>
     <%= dog_fields.text_field :name %><br>
 

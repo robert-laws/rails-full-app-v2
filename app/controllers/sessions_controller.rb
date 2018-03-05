@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
         if @user.addresses && @user.dogs.count > 0
           redirect_to user_path(@user), notice: "You have successfully logged in"
         else
+          session[:profile] = true
           redirect_to edit_user_path(@user), notice: "Setup your Profile"
         end
       else

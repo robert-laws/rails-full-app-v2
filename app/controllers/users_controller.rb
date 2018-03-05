@@ -9,9 +9,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @addresses = @user.addresses.build
-    number = params["dog_count"].to_i
-    @dogs = number.times { @user.dogs.build }
+    @number = params["dog_count"].to_i
+    @profile_edit = session[:profile]
+    if @profile_edit && @number > 0
+      @addresses = @user.addresses.build
+      @dogs = @number.times { @user.dogs.build }
+    end
   end
 
   def new
@@ -31,6 +34,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      session[:profile] = false
       redirect_to user_path(@user), notice: "Your profile has been updated successfully"
     else
       render :edit
@@ -40,6 +44,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :username, :password, addresses_attributes: [:street_1, :street_2, :city, :state, :zip_code, :user_id], dogs_attributes: [:name, :breed, :age, :user_id])
+    params.require(:user).permit(:first_name, :last_name, :email, :username, :password, addresses_attributes: [:id, :street_1, :street_2, :city, :state, :zip_code, :user_id], dogs_attributes: [:id, :name, :breed, :age, :user_id])
   end
 end
