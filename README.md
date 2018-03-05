@@ -6,7 +6,7 @@ Build process for the testing website
 
 - [x] user-accounts [authentication, validations, error messages]
 - [x] user-accounts [omniauth]
-- [ ] profile-associations [associations, validations, error messages] - *depends on user-accounts*
+- [x] profile-associations [associations, validations, error messages] - *depends on user-accounts*
 - [x] location-activity-features [associations, nested form, validations, error messages, scope methods]
 - [ ] reservations [associations, nested form with join table, validations, error messages] - *depends on profile-associations*
 - [ ] user-interface-and-integration [asset-pipeline, etc.]
@@ -14,7 +14,7 @@ Build process for the testing website
 ## Component Overview
 
 - [x] Authenitication (create user with first_name, last_name, usernmae, email, password)
-- [ ] User Profile (add address and one-or-more dogs to user)
+- [x] User Profile (add address and one-or-more dogs to user)
 - [x] Location
 - [x] Activity
 - [x] Nested form -> location has_many activities
