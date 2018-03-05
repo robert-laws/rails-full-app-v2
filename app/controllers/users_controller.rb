@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      session[:profile] = true
       redirect_to edit_user_path(@user), notice: "Your account was successfully created. Please take a moment to add some additional information"
     else
       render :new
