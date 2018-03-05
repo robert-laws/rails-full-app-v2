@@ -29,7 +29,12 @@ class LocationsController < ApplicationController
     @locations = Location.all
     @locations = @locations.by_open_year(params[:year]) if params[:year].present?
     @locations = @locations.by_size(params[:size]) if params[:size].present?
-    @locations = @locations.by_activities_count(params[:activities]) if params[:activities].present?
+    @locations = @locations.by_activities_count(params[:activities].to_i) if params[:activities].present?
+  end
+
+  def loc_activities
+    @locations = Location.all
+    @locations = @locations.by_activities_count(params[:activities].to_i) if params[:activities].present?
   end
 
   def show

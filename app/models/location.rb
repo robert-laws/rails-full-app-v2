@@ -26,8 +26,8 @@ class Location < ApplicationRecord
     where("size = ?", size)
   end
 
-  def self.by_activities_count
-    
+  def self.by_activities_count(number)
+    joins(:activities).group('locations.id').having('count(activity_id) = ?', number)
   end
 
   def self.sort_asc

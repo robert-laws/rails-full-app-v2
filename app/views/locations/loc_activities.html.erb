@@ -1,0 +1,16 @@
+<h1>Location By Activities</h1>
+
+<ul>
+  <% @locations.each do |location| %>
+    <li>
+      <%= location.city %>
+    </li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= form_tag("/locations/loc_activities", method: "get") do %>
+  <%= select_tag "activities", options_for_select(Location.number_of_activities, params[:activities]), include_blank: true %>
+  <%= submit_tag "Filter" %>
+<% end %>

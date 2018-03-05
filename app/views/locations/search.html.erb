@@ -13,6 +13,6 @@
 <%= form_tag("/locations/search", method: "get") do %>
   <%= select_tag "year", options_for_select(Location.min_value("open_year")..Location.max_value("open_year"), params[:year]), include_blank: true %>
   <%= select_tag "size", options_for_select(Location.size_uniq_sort.map { |i| ["#{i.size}", i.size]}, params[:size]), include_blank: true %>
-  <%= select_tag "actitivies", options_for_select(Location.number_of_activities, params[:activities]), include_blank: true %>
+  <%= select_tag "activities", options_for_select(Location.number_of_activities, params[:activities]), include_blank: true %>
   <%= submit_tag "Filter" %>
 <% end %>
