@@ -7,7 +7,7 @@ Build process for the testing website
 - [x] user-accounts [authentication, validations, error messages]
 - [x] user-accounts [omniauth]
 - [ ] profile-associations [associations, validations, error messages] - *depends on user-accounts*
-- [ ] location-activity-features [associations, nested form, validations, error messages, scope methods]
+- [x] location-activity-features [associations, nested form, validations, error messages, scope methods]
 - [ ] reservations [associations, nested form with join table, validations, error messages] - *depends on profile-associations*
 - [ ] user-interface-and-integration [asset-pipeline, etc.]
 
@@ -19,7 +19,7 @@ Build process for the testing website
 - [x] Activity
 - [x] Nested form -> location has_many activities
 - [x] Nested resource -> locations/:location_id/activities/:id
-- [ ] Class methods -> locations, activities, etc.
+- [x] Class methods -> locations, activities, etc.
 - [ ] Reservations -> nested form many-to-many reservations to activities
 - [ ] Validations, etc.
 
