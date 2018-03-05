@@ -1,0 +1,19 @@
+<h1>User Details</h1>
+
+<p>
+  <%= "Hello, #{current_user.username}" %>
+</p>
+
+<%= render 'shared/flash' %>
+
+<h4>
+  <%= @user.first_name %> <%= @user.last_name %>
+</h4>
+
+<p>
+  <%= @user.username %>
+</p>
+
+<p>
+  <%= @user.email %>
+</p>
