@@ -14,5 +14,36 @@
   <%= f.label :password %>
   <%= f.password_field :password %><br>
 
-  <%= f.submit 'Sign Up' %>
+  <%= f.fields_for(:addresses) do |address_fields| %>
+    <h5>User Address</h5>
+    
+    <%= address_fields.label :street_1 %>
+    <%= address_fields.text_field :street_1 %><br>
+
+    <%= address_fields.label :street_2 %>
+    <%= address_fields.text_field :street_2 %><br>
+
+    <%= address_fields.label :city %>
+    <%= address_fields.text_field :city %><br>
+
+    <%= address_fields.label :state %>
+    <%= address_fields.text_field :state %><br>
+
+    <%= address_fields.label :zip_code %>
+    <%= address_fields.text_field :zip_code %><br>
+  <% end %>
+
+  <%= f.fields_for(:dogs) do |dog_fields| %>
+    <h5>Dog # <%= dog_fields.index + 1 %></h5> 
+    <%= dog_fields.label :name %>
+    <%= dog_fields.text_field :name %><br>
+
+    <%= dog_fields.label :breed %>
+    <%= dog_fields.text_field :breed %><br>
+
+    <%= dog_fields.label :age %>
+    <%= dog_fields.number_field :age %><br>
+  <% end %>
+
+  <%= f.submit submit_text %>
 <% end %>

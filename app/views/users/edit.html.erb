@@ -1,0 +1,26 @@
+<h1>Setup your Profile</h1>
+
+<p>
+  <%= "Hello, #{current_user.username}" %>
+</p>
+
+<%= render 'shared/flash' %>
+
+<hr>
+
+<% if params[:dog_count].blank? %>
+
+  <h4>How many dogs do you have?</h4>
+
+  <%= link_to "One Dog", edit_user_path(@user, dog_count: 1), method: :get %>
+
+  <%= link_to "Two Dogs", edit_user_path(@user, dog_count: 2), method: :get %>
+
+  <%= link_to "Three Dogs", edit_user_path(@user, dog_count: 3), method: :get %>
+
+<% else %>
+
+  <%= render partial: 'form', locals: { submit_text: "Update your profile" } %>
+
+<% end %>
+

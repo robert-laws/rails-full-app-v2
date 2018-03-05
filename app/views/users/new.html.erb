@@ -2,4 +2,4 @@
 
 <%= render partial: 'shared/form_errors', object: @user, as: 'obj' %>
 
-<%= render 'form' %>
+<%= render partial: 'form', locals: { submit_text: "Sign Up" } %>

@@ -8,13 +8,21 @@ class SessionsController < ApplicationController
       # login with OAuth
       @user = User.find_or_create_by_omniauth(auth_hash)
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      if @user.addresses && @user.dogs.count > 0
+        redirect_to user_path(@user)
+      else
+        redirect_to edit_user_path(@user)
+      end
     else
       # login with username and password
       @user = User.find_by(username: params[:user][:username])
       if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        redirect_to user_path(@user), notice: "You have successfully logged in"
+        if @user.addresses && @user.dogs.count > 0
+          redirect_to user_path(@user), notice: "You have successfully logged in"
+        else
+          redirect_to edit_user_path(@user), notice: "Setup your Profile"
+        end
       else
         redirect_to signin_path, alert: "Login failed, please try again"
       end

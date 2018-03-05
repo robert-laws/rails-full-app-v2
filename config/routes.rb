@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
 
   # Users
-  get '/users', to: 'users#index'
-  post '/users', to: 'users#create'
-  get '/user/:id', to: 'users#show', as: 'user'
+  # get '/users', to: 'users#index'
+  # post '/users', to: 'users#create'
+  # get '/user/:id', to: 'users#show', as: 'user'
+
+  resources :users, only: [:index, :show, :new, :create, :edit, :update]
+
+  # User Profile
+  # get '/profile/:id', to: 'users#profile', as: 'profile'
 end

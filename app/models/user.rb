@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  has_many :addresses, dependent: :destroy
+  has_many :dogs, dependent: :destroy
+
+  accepts_nested_attributes_for :addresses
+  accepts_nested_attributes_for :dogs
+
   validates :username, presence: true
   # validates :username, uniqueness: true
 
