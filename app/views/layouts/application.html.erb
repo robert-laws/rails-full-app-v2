@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <p>
+      <% if !current_user %>
+        <%= link_to 'Sign In', signin_path %> | 
+        <%= link_to 'Sign Up', new_user_path %> | 
+        <%= link_to 'Sign In via Github', "/auth/github"%>
+      <% else %>
+        <%= link_to 'Sign Out', signout_path %>
+      <% end %>
+    </p>
+
     <%= yield %>
   </body>
 </html>

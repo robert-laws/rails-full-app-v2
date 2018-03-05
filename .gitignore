@@ -22,4 +22,8 @@
 
 .byebug_history
 
+<<<<<<< HEAD
 /config/initializers/omniauth.rb
+=======
+/config/initializers/omniauth.rb
+>>>>>>> user-accounts
