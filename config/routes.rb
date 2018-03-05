@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   post '/sessions/create', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
   get '/auth/:provider/callback', to: 'sessions#create'
+
+  # Users
+  get '/users', to: 'users#index'
+  post '/users', to: 'users#create'
+  get '/user/:id', to: 'users#show', as: 'user'
 end
